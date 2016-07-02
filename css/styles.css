@@ -9,12 +9,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 html, body {
     min-height: 100%;
     max-width: 728px;
-    padding-left: 1em;
     margin: 0 auto;
     background-color: #FFF;
     font-family: 'El Messiri', sans-serif;
     color: #000;
-
 }
 
 body {
@@ -23,11 +21,12 @@ body {
 }
 
 header {
+    padding-left: 1em;
     padding-right: 1em;
 }
 
 h1 {
-    font-size: 2.75em;
+    font-size: 2.5em;
 }
 
 h2 {
@@ -56,25 +55,24 @@ hr {
     height: 175px;
     width: 460px;
     padding: 1em;
-    margin: 1em 6em;
+    margin: 1em 5em;
     position: relative;
     -webkit-perspective: 900;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
   }
 
-.quizCard > ul {
-      padding-top: .7em;
-      padding-left: 1em;
-      padding-right: 1em;
-      font-size: 1.3em;
-      line-height: 1.5em;
-  }
+.cardFront ul {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
 
 .quizCard .cardFront {
     background-color: #feebd7;
     line-height: 1.1em;
-    backface-visibility: hidden;
 }
 
 .quizCard .cardFront:hover {
@@ -83,8 +81,17 @@ hr {
 
 .quizCard .cardBack {
     background-color: #fff3e5;
-    -webkit-perspective: 800;
     line-height: 1.5em;
+}
+
+.flip {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility:    visible;
+  -ms-backface-visibility:     visible;
 }
 
 .funFact {
