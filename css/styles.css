@@ -14,8 +14,12 @@ html, body {
     background-color: #FFF;
     font-family: 'El Messiri', sans-serif;
     color: #000;
-    background-image: url(../images/cocoa_beans_med.jpg);
-    background-repeat: no-repeat;
+
+}
+
+body {
+  background-image: url(../images/cocoa_beans_med.jpg);
+  background-repeat: no-repeat;
 }
 
 header {
@@ -28,6 +32,7 @@ h1 {
 
 h2 {
     font-size: 1.4em;
+    font-weight: bold;
     line-height: 1.3em;
     padding-left: 1em;
     padding-right: 1em;
@@ -48,14 +53,38 @@ hr {
 }
 
 .quizCard {
-    padding: 1em;
-    margin: 1em 6em;
-    background-color: #feebd7;
     height: 175px;
     width: 460px;
+    padding: 1em;
+    margin: 1em 6em;
     position: relative;
-    -webkit-perspective: 800;
+    -webkit-perspective: 900;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+  }
+
+.quizCard > ul {
+      padding-top: .7em;
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: 1.3em;
+      line-height: 1.5em;
+  }
+
+.quizCard .cardFront {
+    background-color: #feebd7;
     line-height: 1.1em;
+    backface-visibility: hidden;
+}
+
+.quizCard .cardFront:hover {
+    transform: rotateY(180deg);
+  }
+
+.quizCard .cardBack {
+    background-color: #fff3e5;
+    -webkit-perspective: 800;
+    line-height: 1.5em;
 }
 
 .funFact {
@@ -68,10 +97,7 @@ hr {
     position: relative;
     -webkit-perspective: 800;
 }
-ul {
-    padding-top: .7em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    font-size: 1.3em;
-    line-height: 1.5em;
+
+.nextButton {
+
 }
