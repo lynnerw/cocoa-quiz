@@ -91,7 +91,7 @@ p {
     backface-visibility: hidden;
 }
 
-.card ul {
+.quizCard ul {
     padding-top: .5em;
     padding-left: 2em;
     padding-right: 1em;
