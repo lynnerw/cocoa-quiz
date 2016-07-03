@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
     <header>
         <h1>The Cocoa Quiz</h1>
         <h2>Are you a fan of chocolate? Do you know what it's made from? Let's see how much you know about the world's favorite confection...</h2>
@@ -19,22 +21,24 @@
     <!-- the quiz cards and fun facts -->
     <section>
         <div class="quizCard">
-            <div class="card">
+            <div class="card front">
                 <p>Cocoa is...</p>
-                <ul>
+                <ol>
                     <li>A small town in Florida.</li>
-                    <li>An ingredient used to make chocolate.</li>
+                    <li>An ingredient required to make chocolate.</li>
                     <li>Apple’s object­-oriented API for OS X.</li>
                     <li>All of the above.</li>
-                </ul>
+                </ol>
             </div>
+            <script src="js/quiz.js"></script>
+
             <!-- on click, flip card and display answer as well as fun fact below it -->
-            <div class="flipped">
-                <p>Cocoa is the basic ingredient needed to make chocolate. But it takes almost a year for a cocoa tree to produce enough for 10 standard-sized Hershey bars.</p>
+            <div class="back flipped">
+                <p>#4 is correct. Cocoa is the basic ingredient required to make chocolate. But it takes almost a year for a cocoa tree to produce enough for 10 standard-sized Hershey bars.</p>
                 <button type="submit" name="submit" value="Next question" id="button" />
             </div>
             <div class="funFact">
-                <p><strong>Fun Fact:</strong> The cocoa we use to make chocolate is from a tiny nib found inside the seeds which are inside the pods which dangle from the cocoa trees that only grow in tropical climates!</p>
+                <p><strong>Fun Fact:</strong> The cocoa we use is from a tiny nib inside the cocoa seed(bean). There are 20-50 seeds inside a pod and a cocoa tree produces 5-7 pods annually.</p>
             </div>
         </div>
     </section>
@@ -43,18 +47,18 @@
         <div class="quizCard">
             <div class="card">
                 <p>People have been enjoying cocoa since</p>
-                <ul>
+                <ol>
                     <li>The height of the Roman empire, circa 100 A.D.</li>
                     <li>Europeans found it in South America in 1517.</li>
                     <li>The middle of the Late Bronze Age, about 2000 B.C.</li>
                     <li>The Hershey family started making chocolate in 1879.</li>
-                </ul>
+                </ol>
            </div>
            <div class="flipped">
                 <p>There is evidence that the ancient Mayans were the first to enjoy cocoa, during the middle of the Late Bronze Age, about 2000 B.C.</p>
                 <button type="submit" name="submit" value="Next question" id="button" />
            <div class="funFact">
-                <p><strong>Fun Fact:</strong> ​Cocoa beans were so considered so valuable that the Aztec people of South America used them as currency; people could pay their taxes in cocoa beans and one turkey cost 100 cocoa beans and one fresh avocado was worth three beans.</p>
+                <p><strong>Fun Fact:</strong> ​Cocoa beans were so valuable to the Aztec culture that they used them as currency; one fresh avocado was worth three beans.</p>
            </div>
         </div>
     </section>
@@ -63,20 +67,64 @@
         <div class="quizCard">
             <div class="card">
                 <p>Before cocoa beans can be used for chocolate they are</p>
-                <ul>
+                <ol>
                     <li>Fermented</li>
                     <li>Dried</li>
                     <li>Conched</li>
                     <li>Tempered</li>
                     <li>All of the above</li>
-                </ul>
+                </ol>
             </div>
             <div class="flipped">
-                <p>Cocoa beans require a lot of preparation and time before they're ready to make chocolate.</p>
+                <p>#5 is correct. It takes a lot of time and preparation to turn cocoa beans into chocolate.</p>
                 <button type="submit" name="submit" value="Next question" id="button" />
             </div>
             <div class="funFact">
-                <p><strong>Fun Fact:</strong> ​Historians have evidence to suggest that cocoa beans were considered valuable by the Aztec people of South America, as early as 1900 BC. They used cocoa beans to make chocolate but also as currency; people could pay their taxes in cocoa beans. Evidence shows the Aztecs used a system in which one turkey cost 100 cocoa beans and one fresh avocado was worth three beans.</p>
+                <p><strong>Fun Fact:</strong> ​Chocolate gives you a more intense mental high and gets your heart pounding more than kissing does.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="quizCard">
+            <div class="card">
+                <p>The following statments about chocolate consumption are true:</p>
+                <ol>
+                    <li>Chocolate was consumed as a liquid, not a solid, for 90% of its history.</li>
+                    <li>The Aztec emperor Montezuma II drank more than 50 cups of chocolate every day.</li>
+                    <li>Americans buy more than 58 million pounds of chocolate on Valentine’s Day.</li>
+                    <li>In one form or another, we consume 3 million tons of cocoa beans annually.</li>
+                    <li>All of the above</li>
+                </ol>
+            </div>
+            <div class="flipped">
+                <p>#5 is correct.</p>
+                <button type="submit" name="submit" value="Next question" id="button" />
+            </div>
+            <div class="funFact">
+                <p><strong>Fun Fact:</strong> Chocolate has over 600 flavor compounds, while red wine has just 200.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="quizCard">
+            <div class="card">
+                <p>The following benefits of cocoa have been studied:</p>
+                <ol>
+                    <li>Is rich in antioxidants that may have antiaging properties.</li>
+                    <li>Contains a high level of flavonoids which may contribute to cardiovascular health.</li>
+                    <li>May reduce blood pressure and benefit LDL cholesterol levels.</li>
+                    <li>May benefit brain health, as reflected inlearning and memory.</li>
+                    <li>All of the above.</li>
+                </ol>
+            </div>
+            <div class="flipped">
+                <p>#5 is correct.</p>
+                <button type="submit" name="submit" value="Next question" id="button" />
+            </div>
+            <div class="funFact">
+                <p><strong>Fun Fact:</strong>.</p>
             </div>
         </div>
     </section>

@@ -31,11 +31,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: bold;
     line-height: 1.3em;
     padding-left: 1em;
     padding-right: 1em;
+    margin: 0 auto;
 }
 
 p {
@@ -43,20 +44,11 @@ p {
     line-height: 1.4em;
 }
 
-.caption {
-    font-size: .9em;
-    line-height: 1em;
-}
-
-hr {
-    width: 85%;
-}
-
 .quizCard {
     height: 190px;
     width: 475px;
     padding: 1em;
-    margin: 1em 5em;
+    margin: 1em auto;
     position: relative;
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -90,6 +82,9 @@ hr {
     text-align: center;
     font-weight: bold;
     position: absolute;
+}
+
+.front .back {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
@@ -112,13 +107,16 @@ hr {
 }
 
 .funFact {
+    height: 75px;
+    width: 600px;
     padding: 1em;
-    margin-top: 10em;
+    margin-top: 8em;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #5c2f00;
     color: #fff;
-    height: 100px;
-    width: 600px;
-
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
 #button {
