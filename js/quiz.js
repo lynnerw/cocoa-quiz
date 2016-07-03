@@ -21,10 +21,11 @@ $('.quizCard').click(function() {
    var userAnswer = $(this).parent('li');
 });
 
-/*  $('input[type="submit"]').click(function() { */
+/*  $('input[type="submit"]').click(function() {
        // assign text input to a variable
-/*    var textInput = $('input[name="new-area-item"]', $(this).parent('form') );
+       var textInput = $('input[name="new-area-item"]', $(this).parent('form') );
        var newItem = textInput.val();
+     }
 */
 
 console.log(quiz.Q[currentIndex]);
@@ -43,24 +44,19 @@ function checkAnswer(userAnswer) {
     }
 }
 
+  // $('.fa-check').click(function () {
+  // var chosenId = $(this).parent('li').attr('id');
+  // compare to correctA
+  // logic to get the index of the chosen answer.
+  // comparison logic
+  // updating our score
 
-    /* quiz.Q is an array of single strings; quiz.A is an array of ordered list
-    $('quizCard').html(quiz.Q[i] + quiz.A[i])
+  // function displayQuestion(index) {
+  // populate the HTML with the question.
+  // loop through all answers for the question & for every answer:
+  // each answer : <li id = "answer_index"><i class = "fa-check"></i></li>
 
-/* subarrary is li tag with an index - append to HTML
-    (userAnswer = onclick # of li - checking
-    $this([i]) - like shopping listdetect user click
-
-    $('quizCard').hide(quizQ[i], quizA[i])
-
-    $('quizCard').html(quizA[i].correctA)
-    display funFact card,
-
-    display nextQ button,
-    pause - on button click, hide(quizA[i].correctA and funFact)
-
- end for loop
-
+/*
 display on quizCard ("Your score was " + score + " out of 5.")
 */
 
