@@ -47,63 +47,18 @@ p {
 .quizCard {
     height: 190px;
     width: 475px;
+    background-color: white;
     padding: 1em;
     margin: 1em auto;
     position: relative;
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    -o-perspective: 800px;
-    perspective: 800px;
 }
 
-.card {
-    padding: 1em;
-    background-color: white;
-    height: 175px;
-    width: 460px;
-    position: absolute;
-    -webkit-transition: -webkit-transform 1s;
-    -moz-transition: -moz-transform 10s;
-    -o-transition: -o-transform 10s;
-    transition: transform 1s;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform-origin: 50% 50%;
-}
-
-.card div {
-    display: block;
-    height: 100%;
-    width: 100%;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-}
-
-.front .back {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.quizCard ul {
+.quizCard > ol {
     padding-top: .5em;
     padding-left: 2em;
     padding-right: 1em;
     font-size: 1.2em;
     line-height: 1.2em;
-}
-
-.flipped {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
 }
 
 .funFact {
