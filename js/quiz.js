@@ -16,28 +16,49 @@ var quiz = {
 
 var score = 0;
 
-for (i = 0; i < 5, i++)
+//setTimeout, setInterval
+var currentIndex = 0;
+
+$('.fa-check').click(function () {
+  var chosenId = $(this).parent('li').attr('id');
+  // compare to correctA
+  // logic to get the index of the chosen answer.
+  // comparison logic
+  // updating our score
+});
+
+$('.next-question').click(function () {
+    currentIndex++;
+    displayQuestion(currentIndex);
+});
+
+displayQuestion(currentIndex);
+
+function displayQuestion(index) {
+  // populate the HTML with the question.
+  // loop through all answers for the question & for every answer:
+    // each answer : <li id = "answer_index"><i class = "fa-check"></i></li>
+
+  $('quizCard').html(quiz.Q[i] + quiz.A[i])
+
+  input userAnswer (userAnswer = onclick # of li)
+
+  $('quizCard').hide(quizQ[i], quizA[i])
+
+  function checkAnswer(userAnswer) {
+      if (userAnswer == quizA[i].correctA) {
+          score++;
+      }
+      else {
+          prepend( "Oops. ") to quizA[i].correctA
+      },
+  display quizA[i].correctA on quizCard,
+  display funFact card,
+  display nextQ button,
+  on button click, hide(quizA[i].correctA and funFact)
+}
 
     /* quiz.Q is an array of single strings; quiz.A is an array of ordered list */
-    $('quizCard').html(quiz.Q[i] + quiz.A[i])
-
-    input userAnswer (userAnswer = onclick # of li)
-
-    $('quizCard').hide(quizQ[i], quizA[i])
-
-    function checkAnswer(userAnswer) {
-        if (userAnswer == quizA[i].correctA) {
-            score++;
-        }
-        else {
-            prepend( "Oops. ") to quizA[i].correctA
-        },
-    display quizA[i].correctA on quizCard,
-    display funFact card,
-    display nextQ button,
-    on button click, hide(quizA[i].correctA and funFact)
-
- end for loop */
 
 display on quizCard ("Your score was " + score + " out of 5.")
 
