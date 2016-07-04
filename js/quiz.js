@@ -3,7 +3,7 @@ $(document).ready(function(){
 var score = 0;
  /* init index for array of Q and A pairs */
 var currentIndex = 0;
-  /* declare object quiz, with properties Question, Answer, Correct Answer value per ordered list, and corresponding fun fact string */
+  /* declare object quiz, with properties Question, Answer, Correct Answer Value per ordered list  */
 var quiz = {
     Q:["<p>Cocoa is...</p>", "<p>People have been enjoying cocoa since </p>", "<p>To prepare cocoa beans for making chocolate they are </p>", "<p>The following statments about chocolate consumption are true: </p>", "<p>The following benefits of cocoa have been studied: </p>"],
       /* only including array of strings for a quiz[0] answers while testing this approach */
@@ -14,20 +14,20 @@ var quiz = {
   /* define function display question and answer pair on quizCard */
 function displayQandA() {
     $(quiz.Q[currentIndex] + "<ol>" + quiz.A[currentIndex] + "</ol>").insertBefore('form');
+    // console.log("correctAnsValue is " + quiz.correctAnsValue[currentIndex]);
 }
 
 displayQandA(currentIndex);
 
-//console.log("current question is " + quiz.Q[currentIndex]);
-
 var userAnswer = 0;
 $('input[type="submit"]').click(function() {
-     // assign nput to a variable
+     // assign input to a variable
      var userAnswer = $('input[name="userAnswer"]', $(this).parent('form') );
      var userAnswer = userAnswer.val();
    console.log("userAnswer is " + userAnswer);
+   console.log("# of correct answer is " + quiz.correctAnsValue[currentIndex]);
+
 });
-console.log("# of correct answer is " + quiz.correctAnsValue[currentIndex]);
 
 function checkAnswer() {
     if (parseInt(userAnswer) == quiz.correctAnsValue[currentIndex]) {
@@ -44,25 +44,22 @@ function checkAnswer() {
       /* hide currentIndex Q and A pair and show correct answer string */
     $('quiz.Q[currentIndex]').hide();
     $('quiz.A[currentIndex]').hide();
+    return;
     //$('.quizCard').show(quiz.A[currentIndex].correctAns);
     //$('funFact').show(quiz.funFact[currentIndex]);
 }
 
-checkAnswer();
+checkAnswer(userAnswer, quiz.correctAnsValue[currentIndex]);
 
   /* allow user to select "next question" before displaying next Q and A pair */
 $('.nextQuestion').click(function() {
     currentIndex++;
     console.log("currentIndex is " + currentIndex);
+
 });
 
 /*
 display on quizCard ("Your score is " + score + " out of 5.")
 */
-
-  // $('.fa-check').click(function () {
-  // var chosenId = $(this).parent('li').attr('id');
-  // loop through all answers for the question & for every answer:
-  // each answer : <li id = "answer_index"><i class = "fa-check"></i></li>
 
 });
