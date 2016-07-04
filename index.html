@@ -17,32 +17,20 @@
         <h1>The Cocoa Quiz</h1>
         <h2>Are you a fan of chocolate? Do you know what it's made from? Let's see how much you know about the world's favorite confection...</h2>
     </header>
-    <!-- the quiz cards and fun facts -->
+    <!-- display quiz Q and A, get user answer and display fun facts -->
         <div class="quizCard">
-
+            <form>
+                <input type="number" maxlength="1" name="userAnswer" placeholder="The answer is #">
+                <input type="submit" value="Answer">
+              </form>
         </div>
-        <form>
-              <input type="text" maxlength="1" name="quizCard" placeholder="#">
-              <input type="submit" value="Answer">
-        </form>
         <div class="funFact">
         </div>
 
 <!-- content for subsequent Q & A cards
-    <section>
-        <div class="quizCard">
-            <div class="card">
-           </div>
-           <div class="flipped">
-                <p>#3 is correct. There is evidence that the ancient Mayans were the first to enjoy cocoa, during the middle of the Late Bronze Age, about 2000 B.C.</p>
-                <button type="submit" name="submit" value="Next question" id="button" />
+  quiz[1] string for userAnswer: <p>#3 is correct. There is evidence that the ancient Mayans were the first to enjoy cocoa, during the middle of the Late Bronze Age, about 2000 B.C.</p>
 
-        </div>
-    </section>
-
-    <section>
-        <div class="quizCard">
-            <div class="card">
+  quiz[2] Q and A and string:
                 <p>Before cocoa beans can be used for chocolate they are</p>
                 <ol>
                     <li>Fermented</li>
@@ -51,19 +39,8 @@
                     <li>Tempered</li>
                     <li>All of the above</li>
                 </ol>
-            </div>
-            <div class="flipped">
                 <p>#5 is correct. It takes a lot of time and preparation to turn cocoa beans into chocolate.</p>
-                <button type="submit" name="submit" value="Next question" id="button" />
-            </div>
-            <div class="funFact">
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="quizCard">
-            <div class="card">
+  quiz[3] Q and A
                 <p>The following statments about chocolate consumption are true:</p>
                 <ol>
                     <li>Chocolate was consumed as a liquid, not a solid, for 90% of its history.</li>
@@ -72,19 +49,9 @@
                     <li>In one form or another, we consume 3 million tons of cocoa beans annually.</li>
                     <li>All of the above</li>
                 </ol>
-            </div>
-            <div class="flipped">
                 <p>#5 is correct.</p>
-                <button type="submit" name="submit" value="Next question" id="button" />
-            </div>
-            <div class="funFact">
-            </div>
-        </div>
-    </section>
 
-    <section>
-        <div class="quizCard">
-            <div class="card">
+  quiz[4] Q and A
                 <p>The following benefits of cocoa have been studied:</p>
                 <ol>
                     <li>Is rich in antioxidants that may have antiaging properties.</li>
@@ -93,15 +60,6 @@
                     <li>May benefit brain health, as reflected inlearning and memory.</li>
                     <li>All of the above.</li>
                 </ol>
-            </div>
-            <div class="flipped">
-                <p>#5 is correct.</p>
-                <button type="submit" name="submit" value="Next question" id="button" />
-            </div>
-            <div class="funFact">
-            </div>
-        </div>
-    </section>
 -->
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
