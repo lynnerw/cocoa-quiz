@@ -11,24 +11,20 @@ $(document).ready(function(){
     };
 
     /* define function display question and answer pair on quizCard */
-    function displayQandA() {
+    function displayQandA(currentIndex) {
         $('.qAnda').html(quiz.Q[currentIndex] + "<ol>" + quiz.A[currentIndex] + "</ol>");
         console.log("Q is " + quiz.Q[currentIndex]);
     }
 
-    function checkAnswer() {
+    function checkAnswer(userAnswer) {
   console.log("answer to check is " + userAnswer + " and correct answer is " + quiz.correctAnsValue[currentIndex]);
         if (parseInt(userAnswer) == quiz.correctAnsValue[currentIndex]) {
             $("<p><br>You're right!</p>").appendTo('.qAnda');
             score++;
         } else {
-            //$(quiz.A[currentIndex].correctAns).prepend("Oops. ");
-            //$("Sorry; the correct answer is " + quiz.A[parseInt(quiz.correctAnsValue[currentIndex])]).appendTo('#quizCard');
-            $("<p>sorry</p>").appendTo('.qAnda');
+            $("<p><br>Sorry; the correct answer is #</p>" + (parseInt(quiz.correctAnsValue[currentIndex]))).appendTo('.qAnda');
+  console.log(quiz.correctAnsValue[currentIndex]);
         }
-
-        /* hide currentIndex Q and A pair and show correct answer string */
-        //$('.qAnda').hide();
     }
     // begin
     if(currentIndex < 5) {
@@ -48,7 +44,7 @@ $(document).ready(function(){
 
         // allow user to select "next question" before displaying next Q and A pair
         $('.nextQuestion').click(function() {
-        console.log("program registers click");
+        console.log("program registers a click");
         currentIndex++;
         });
 
