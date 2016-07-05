@@ -50,7 +50,7 @@ form {
   background-color: #573100;
 }
 
-.quizCard {
+#quizCard {
     height: 275px;
     width: 475px;
     background-color: white;
@@ -59,7 +59,12 @@ form {
     position: relative;
 }
 
-.quizCard > ol {
+.qAnda {
+    height: 200px;
+    width: 425px;
+}
+
+.qAnda > ol {
     padding-top: .5em;
     padding-left: 2em;
     padding-right: 1em;
