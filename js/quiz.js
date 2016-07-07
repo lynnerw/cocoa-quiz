@@ -22,34 +22,32 @@ $(document).ready(function(){
             $("<p><br>You're right!</p>").appendTo('.qAnda');
             score++;
         } else {
-            $("<p><br>Sorry; the correct answer is #</p>" + (parseInt(quiz.correctAnsValue[currentIndex]))).appendTo('.qAnda');
-  console.log(quiz.correctAnsValue[currentIndex]);
+            $("<p><br>Sorry; the correct answer is #</p>" + quiz.correctAnsValue[currentIndex]).appendTo('.qAnda');
+  console.log("correct answer value is" + quiz.correctAnsValue[currentIndex]);
         }
     }
-    // begin
+   // begin
     if(currentIndex < 5) {
 
         displayQandA(currentIndex);
 
         $('input[type="submit"]').click(function() {
               // assign input to a variable
-              var textInput = $('input[name="userAnswer"]', $(this).parent('form') );
-              var userAnswer = textInput.val();
-              console.log("userAnswer is " + userAnswer);
-              console.log("correct answer is " + quiz.correctAnsValue[currentIndex]);
+            var textInput = $('input[name="userAnswer"]', $(this).parent('form') );
+            var userAnswer = textInput.val();
 
             checkAnswer(userAnswer);
-            $('form').empty();
+            $('form.userAnswer').empty();
+            currentIndex++;
         });
 
-        // allow user to select "next question" before displaying next Q and A pair
+          // allow user to select "next question" before displaying next Q and A pair
         $('.nextQuestion').click(function() {
-        console.log("program registers a click");
-        currentIndex++;
+        console.log("program registers a click and currentIndex is " + currentIndex);
         });
 
     } else {
-        $("<p>Your score is </p>" + score + "<p> out of 5.</p>").html('.nextQuestion');
-    }
 
+        $("<p>Your score is </p>" + score + "<p> out of 5.</p>").html('.nextQuestion');
+      }
 });
