@@ -28,9 +28,9 @@ $(document).ready(function() {
   }
   $('#final').hide();
 
-  doWork(0);
+  doWork();
 
-  function doWork(currentIndex) {
+  function doWork() {
 
     if(currentIndex < 5) {
 
@@ -49,25 +49,25 @@ $(document).ready(function() {
             currentIndex++;
             $('input[type="text"]').val('');
             $('.nextQuestion').off('click');
-            doWork(currentIndex);
+            doWork();
       });
     } else {
         $('.nextQuestion').off('click');
         $('#quizCard').hide();
-        $('.score').val('');
-        $('.tryAgain').val('');
         $('#final').show();
         $("<p>You answered " + score + " out of 5 correctly.</p>" + "<p>Not too bad!</p>").appendTo('.score');
         $("<p>Try again</p>").appendTo('.tryAgain');
-
     }
   }
 
   $('.tryAgain').click(function() {
         score = 0;
+        $('.score').empty();
+        $('.tryAgain').empty();
         userAnswer = 0;
-        var currentIndex = 0;
+        currentIndex = 0;
+
         $('#final').hide();
-        doWork(currentIndex);
+        doWork();
       });
 });

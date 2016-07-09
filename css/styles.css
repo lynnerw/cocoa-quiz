@@ -95,15 +95,16 @@ h3 {
 }
 
 #final {
-  margin: 0 auto;
-  font-size: 1.4em;
-  font-weight: 600;
+    margin: 0 auto;
+    font-size: 1.4em;
+    font-weight: 600;
 }
+
 .tryAgain {
     height: 20px;
-    width: 80px;
+    width: 110px;
     border-width: medium;
-    padding: 2em;
+    padding: 1em;
     margin: auto;
     background-color: #fffaf0;
     color: black;
