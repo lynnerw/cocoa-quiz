@@ -42,9 +42,10 @@ $(document).ready(function(){
           $('#tryAgain').off('click');
 
           return onceMore;
-
       });
     }
+    
+doWork();
 
   function doWork() {
 
@@ -82,7 +83,5 @@ $(document).ready(function(){
         }
       };
     }
-
-doWork();
 
 });
