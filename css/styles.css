@@ -52,7 +52,7 @@ form {
 
 #quizCard {
     height: 275px;
-    width: 475px;
+    width: 480px;
     background-color: white;
     padding: 1em;
     margin: 1em auto;
@@ -60,18 +60,29 @@ form {
 }
 
 .qAnda {
-    height: 200px;
-    width: 425px;
+    height: 150px;
+    width: 470px;
 }
 
 .qAnda > ol {
     padding-top: .5em;
     padding-left: 2em;
-    padding-right: 1em;
+    padding-right: .3em;
     font-size: 1.2em;
     line-height: 1.2em;
 }
 
+.feedback {
+  padding: 1em;
+  margin: 1em auto;
+  border: .25em;
+  position: relative;
+}
+.getAns {
+  padding: 1em;
+  margin: 1em auto;
+  position: relative;
+}
 .nextQuestion {
     height: 25px;
     width: 150px;
