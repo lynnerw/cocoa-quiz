@@ -8,13 +8,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 html, body {
     min-height: 100%;
-    max-width: 750px;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     font-family: 'El Messiri', sans-serif;
     color: #000;
 }
 
 body {
+  max-width: 70%;
+  margin-top: 1em;
   background-image: url(../images/cocoa_beans_med.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,21 +40,14 @@ h2 {
     margin: 0 auto;
 }
 
-p {
-    font-size: 1.3em;
-    line-height: 1.4em;
-}
-
-form {
-  padding: .5em;
-  margin: 1em auto;
-  background-color: #573100;
+h3 {
+  font-size: 1.3em;
 }
 
 #quizCard {
-    height: 275px;
-    width: 480px;
-    background-color: white;
+    height: 300px;
+    width: 500px;
+    background-color: #fffaf0;
     padding: 1em;
     margin: 1em auto;
     position: relative;
@@ -61,41 +55,52 @@ form {
 
 .qAnda {
     height: 150px;
-    width: 470px;
+    width: 490px;
+    font-size: 1.3em;
+    line-height: 1em;
 }
 
 .qAnda > ol {
     padding-top: .5em;
     padding-left: 2em;
     padding-right: .3em;
-    font-size: 1.2em;
     line-height: 1.2em;
 }
 
 .feedback {
-  padding: 1em;
-  margin: 1em auto;
-  border: .25em;
-  position: relative;
+    padding: .4em;
+    margin: .75em auto;
+    position: relative;
 }
+
 .getAns {
-  padding: 1em;
-  margin: 1em auto;
-  position: relative;
-}
-.nextQuestion {
-    height: 25px;
-    width: 150px;
-    padding: 1em;
-    margin-top: 1em;
+    padding: .1em;
+    margin-top: 2em;
     margin-right: auto;
-    margin-left: auto;
-    background-color: #5c2f00;
+    margin-left: 8em;
+    position: relative;
+    border-width: 5px;
+    border-color: #573100;
+}
+
+.nextQuestion {
+    height: 26px;
+    width: 140px;
+    padding: .5em;
+    margin: .5em auto;
+    background-color: #573100;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1.4em;
     font-weight: 600;
 }
 
-.nextQuestion > a {
-  list-style: none;
+#score {
+    height: 75px;
+    width: 400px;
+    padding: 1em;
+    margin: auto;
+    background-color: #573100;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 600;
 }
