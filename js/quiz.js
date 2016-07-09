@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $('#tryAgain').hide();
+  var onceMore = false;
   $('#score').hide();
   var score = 0;
   var userAnswer = 0;
@@ -12,11 +14,12 @@ $(document).ready(function(){
       correctAnsValue:[4, 3, 1, 3, 2]
   };
 
-  /* define function display question and answer pair on quizCard */
+  /* define function to display question and answer pair on quizCard */
   function displayQandA(currentIndex) {
     $('.qAnda').html(quiz.Q[currentIndex] + "<ol>" + quiz.A[currentIndex] + "</ol>");
   }
 
+  /* define function to user answer against correct answer value and display feedback */
   function checkAnswer(userAnswer) {
     if (parseInt(userAnswer) == quiz.correctAnsValue[currentIndex]) {
         $("<p><br>You're right!</p>").appendTo('.qAnda>ol');
@@ -26,21 +29,34 @@ $(document).ready(function(){
     }
   }
 
-  // entry point
-  doWork();
+  function tryAgain(onceMore) {
+      $('#tryAgain').show();
+      $("<p>Try again</p>").appendTo('#tryAgain');
+      $('#tryAgain').on('click', function() {
+          onceMore = true;
+          $('#tryAgain').hide();
+          $('#score').hide();
+          var score = 0;
+          var userAnswer = 0;
+          var currentIndex = 0;
+          $('#tryAgain').off('click');
+
+          return onceMore;
+
+      });
+    }
 
   function doWork() {
 
     if(currentIndex < 5) {
         displayQandA(currentIndex);
 
-
         $('input[type="submit"]').click(function() {
         // assign input to a variable
         var textInput = $('input[name="userAnswer"]');
         var userAnswer = textInput.val();
-        console.log("userAnswer is " + userAnswer);
-        console.log("correct answer is " + quiz.correctAnsValue[currentIndex]);
+        //console.log("userAnswer is " + userAnswer);
+        //console.log("correct answer is " + quiz.correctAnsValue[currentIndex]);
         checkAnswer(userAnswer);
         $('input[type="submit"]').off('click');
         });
@@ -51,14 +67,22 @@ $(document).ready(function(){
             $('input[type="text"]').val('');
             $('.nextQuestion').off('click');
             doWork();
-        //console.log("program registers a click and currentIndex is " + currentIndex);
       });
 
     } else {
         $('#quizCard').hide();
         $('#score').show();
         $("<p>Your answered " + score + " out of 5 correctly.</p>" + "<p>Not too bad!</p>").appendTo('#score');
-      }
+
+        tryAgain(onceMore);
+        if (onceMore) {
+          doWork();
+        } else {
+          console.log("you're done");
+        }
+      };
     }
+
+doWork();
 
 });

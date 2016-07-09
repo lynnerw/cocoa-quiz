@@ -14,12 +14,12 @@ html, body {
 }
 
 body {
-  max-width: 70%;
-  margin-top: 1em;
-  background-image: url(../images/cocoa_beans_med.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #FFF;
+    max-width: 70%;
+    margin-top: 1em;
+    background-image: url(../images/cocoa_beans_med.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FFF;
 }
 
 header {
@@ -41,7 +41,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 #quizCard {
@@ -90,6 +90,17 @@ h3 {
     margin: .5em auto;
     background-color: #573100;
     color: #fff;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+#tryAgain {
+    height: 30px;
+    width: 120px;
+    padding: 2em;
+    margin: 1em auto;
+    background-color: #fffaf0;
+    color: black;
     font-size: 1.4em;
     font-weight: 600;
 }
