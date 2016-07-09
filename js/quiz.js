@@ -1,8 +1,5 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-  $('#tryAgain').hide();
-  var onceMore = false;
-  $('#score').hide();
   var score = 0;
   var userAnswer = 0;
   var currentIndex = 0;
@@ -16,11 +13,12 @@ $(document).ready(function(){
 
   /* define function to display question and answer pair on quizCard */
   function displayQandA(currentIndex) {
+    $('#quizCard').show();
     $('.qAnda').html(quiz.Q[currentIndex] + "<ol>" + quiz.A[currentIndex] + "</ol>");
   }
 
   /* define function to user answer against correct answer value and display feedback */
-  function checkAnswer(userAnswer) {
+  function checkAnswer(userAnswer,currentIndex) {
     if (parseInt(userAnswer) == quiz.correctAnsValue[currentIndex]) {
         $("<p><br>You're right!</p>").appendTo('.qAnda>ol');
         score++;
@@ -28,60 +26,48 @@ $(document).ready(function(){
         $("<p><br>Ooops; believe it or not, the answer is # " + (quiz.correctAnsValue[currentIndex]) + "!</p>").appendTo('.qAnda>ol');
     }
   }
+  $('#final').hide();
 
-  function tryAgain(onceMore) {
-      $('#tryAgain').show();
-      $("<p>Try again</p>").appendTo('#tryAgain');
-      $('#tryAgain').on('click', function() {
-          onceMore = true;
-          $('#tryAgain').hide();
-          $('#score').hide();
-          var score = 0;
-          var userAnswer = 0;
-          var currentIndex = 0;
-          $('#tryAgain').off('click');
+  doWork(0);
 
-          return onceMore;
-      });
-    }
-    
-doWork();
-
-  function doWork() {
+  function doWork(currentIndex) {
 
     if(currentIndex < 5) {
+
         displayQandA(currentIndex);
 
         $('input[type="submit"]').click(function() {
-        // assign input to a variable
-        var textInput = $('input[name="userAnswer"]');
-        var userAnswer = textInput.val();
-        //console.log("userAnswer is " + userAnswer);
-        //console.log("correct answer is " + quiz.correctAnsValue[currentIndex]);
-        checkAnswer(userAnswer);
-        $('input[type="submit"]').off('click');
+            // assign input to a variable
+            var textInput = $('input[name="userAnswer"]');
+            var userAnswer = textInput.val();
+            $('input[type="submit"]').off('click');
+            checkAnswer(userAnswer,currentIndex);
         });
 
         // allow user to select "next question" before displaying next Q and A pair
-      $('.nextQuestion').on('click', function() {
+        $('.nextQuestion').on('click', function() {
             currentIndex++;
             $('input[type="text"]').val('');
             $('.nextQuestion').off('click');
-            doWork();
+            doWork(currentIndex);
       });
-
     } else {
+        $('.nextQuestion').off('click');
         $('#quizCard').hide();
-        $('#score').show();
-        $("<p>Your answered " + score + " out of 5 correctly.</p>" + "<p>Not too bad!</p>").appendTo('#score');
+        $('.score').val('');
+        $('.tryAgain').val('');
+        $('#final').show();
+        $("<p>You answered " + score + " out of 5 correctly.</p>" + "<p>Not too bad!</p>").appendTo('.score');
+        $("<p>Try again</p>").appendTo('.tryAgain');
 
-        tryAgain(onceMore);
-        if (onceMore) {
-          doWork();
-        } else {
-          console.log("you're done");
-        }
-      };
     }
+  }
 
+  $('.tryAgain').click(function() {
+        score = 0;
+        userAnswer = 0;
+        var currentIndex = 0;
+        $('#final').hide();
+        doWork(currentIndex);
+      });
 });
