@@ -1,5 +1,5 @@
 
-var someQuiz = function(quizItem) /* quizItem consists of question string, an answer string, and an answer value */ {
+var someQuiz = function(quizItem) /* quizItem consists of question string, an array of answer strings, and an answer value */ {
   this.quizItem = quizItem;
 }
 
